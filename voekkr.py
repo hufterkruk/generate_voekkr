@@ -4,6 +4,8 @@
 import argparse
 import random
 
+import pyfiglet
+
 
 def parse():
     """Parse command-line arguments"""
@@ -11,6 +13,7 @@ def parse():
     parser.add_argument(
         "length", type=int, nargs="?", help="length of voekkr to generate"
     )
+    parser.add_argument("-a", "--ascii", action="store_true", help="output ascii art")
     return parser.parse_args()
 
 
@@ -33,7 +36,10 @@ def main():
     string.insert(idx_k1, "k")
     string.insert(idx_k2, "k")
 
-    print(f"v{''.join(string)}r")
+    if args.ascii:
+        print(pyfiglet.figlet_format(f"v{''.join(string)}r"))
+    else:
+        print(f"v{''.join(string)}r")
 
 
 if __name__ == "__main__":
