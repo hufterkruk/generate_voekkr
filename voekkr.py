@@ -6,6 +6,7 @@ import random
 
 
 def parse():
+    """Parse command-line arguments"""
     parser = argparse.ArgumentParser(description="generate random voekkrs")
     parser.add_argument(
         "length", type=int, nargs="?", help="length of voekkr to generate"
