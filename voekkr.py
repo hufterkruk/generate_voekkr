@@ -23,13 +23,13 @@ def main():
 
     string = ["e" if random.randint(0, 1) == 0 else "o" for _ in range(vokkor_length)]
 
-    idx_k1 = random.randint(0, vokkor_length)
-    idx_k2 = random.randint(0, vokkor_length)
-
     for letter in ["e", "o"]:
         if letter not in string:
             idx_letter = random.randint(0, vokkor_length - 1)
             string[idx_letter] = letter
+
+    idx_k1 = random.randint(0, vokkor_length)
+    idx_k2 = random.randint(0, vokkor_length)
     string.insert(idx_k1, "k")
     string.insert(idx_k2, "k")
 
