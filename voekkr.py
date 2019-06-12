@@ -27,7 +27,7 @@ def main():
     idx_k2 = random.randint(0, vokkor_length)
 
     for letter in ["e", "o"]:
-        if string.count(letter) == 0:
+        if letter not in string:
             idx_letter = random.randint(0, vokkor_length - 1)
             string[idx_letter] = letter
     string.insert(idx_k1, "k")
